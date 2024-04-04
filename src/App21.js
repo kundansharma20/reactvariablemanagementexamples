@@ -52,8 +52,18 @@ const counterReducer = (state = initialState, action) => {
 
 let inputRef= useRef();
 let input2Ref= useRef();
-
-
+let input3Ref= useRef();
+const handleThirdInput = () => {
+  input3Ref.current.focus()
+  input3Ref.current.style.backgroundColor = "pink";
+  input3Ref.current.style.padding = "1rem";
+  input3Ref.current.style.color = "white";
+  input3Ref.current.style.width = "150px";
+  input3Ref.current.style.height = "1px";
+  input3Ref.current.style.margin = "5px";
+  input3Ref.current.style.borderRadius = "5px";
+  input3Ref.current.defaultValue ='change css'
+}
 
 const store = createStore(counterReducer);
 
@@ -91,13 +101,13 @@ const dispatch_4 = store.getState();
   
   
   <button onClick={()=>{input2Ref.current.focus(); }}>Focus switch to input2  using ref</button>
-  
+  <button onClick={handleThirdInput}>Focus switch to input3Ref  using ref</button>
   
   <button onClick={()=>{throw new Error("Error was thrown") }}>Generate error </button>
   
   <input type="text" ref={inputRef} />
   <input type="text" ref={input2Ref} />
-  
+  <input type="text" ref={input3Ref} /> 
 </div>
 
 </ErrorHandlingComponent>
