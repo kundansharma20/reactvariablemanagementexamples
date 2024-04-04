@@ -53,6 +53,7 @@ const counterReducer = (state = initialState, action) => {
 let inputRef= useRef();
 let input2Ref= useRef();
 let input3Ref= useRef();
+let input4Ref= useRef();
 const handleThirdInput = () => {
   input3Ref.current.focus()
   input3Ref.current.style.backgroundColor = "pink";
@@ -98,16 +99,16 @@ const dispatch_4 = store.getState();
   <p> State after 7 payload: { dispatch_4 } </p>
 
   <button onClick={()=>{inputRef.current.focus();}}>Focus switch to input1  using ref</button>
-  
-  
   <button onClick={()=>{input2Ref.current.focus(); }}>Focus switch to input2  using ref</button>
-  <button onClick={handleThirdInput}>Focus switch to input3Ref  using ref</button>
+  <button onClick={handleThirdInput}>change css</button>
+  <button onClick={()=>{input4Ref.current.value = "change input data"}}>Change data</button>
   
   <button onClick={()=>{throw new Error("Error was thrown") }}>Generate error </button>
   
   <input type="text" ref={inputRef} />
   <input type="text" ref={input2Ref} />
   <input type="text" ref={input3Ref} /> 
+  <input type="text" ref={input4Ref} />
 </div>
 
 </ErrorHandlingComponent>
