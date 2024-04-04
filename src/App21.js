@@ -18,6 +18,7 @@ function App() {
  {
 
   //fetch().then("")
+  console.log('fork')
   console.log("change the context provider value")
   setDefaultValue({ language:"English",var1:"valueOfVar1",var2:"valueOfVar2",var3:[4,5,6],var4:{name:"reactlearner",age:45}});
 
